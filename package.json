@@ -1,0 +1,22 @@
+{
+  "name": "blockchain-identity",
+  "version": "0.0.1",
+  "description": "my first app of blockchian and some test",
+  "main": "class/hash.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sept08/blockchain-identity.git"
+  },
+  "author": "tian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sept08/blockchain-identity/issues"
+  },
+  "homepage": "https://github.com/sept08/blockchain-identity#readme",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1"
+  }
+}
