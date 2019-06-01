@@ -18,7 +18,7 @@ class Block {
      */
     //
     generateHash() {
-        // Use this to create a temporary reference of the class object
+        // Use this to create a temporary reference of the practice object
         let self = this;
         //Implement your code here
         return new Promise((resolve, reject) => {
