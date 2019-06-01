@@ -49,7 +49,8 @@ myBlockChain.getBlockHeight().then((height) => {
 myBlockChain.getBlock(0).then((block) => {
 	console.log(JSON.stringify(block));
 }).catch((err) => { console.log(err);});
-*?
+*/
+
 /***********************************************
  ***************** Validate Block  *************
  ***********************************************/

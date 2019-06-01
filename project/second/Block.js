@@ -3,9 +3,8 @@
 |  ===============================================*/
 
 class Block {
-    constructor(data){
-        // Add your Block properties
-        // Example: this.hash = "";
+    constructor(data) {
+        // 区块的属性值
         this.hash = "";
         this.height = 0;
         this.body = data;
