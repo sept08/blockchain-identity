@@ -6,4 +6,10 @@ module.exports = function (app) {
 
     app.route('/block/:blockId')
         .get(blockController.blockDetails);
+
+    app.route('/stars/address::walletAddress')
+        .get(blockController.blockDetailsByAddress);
+
+    app.route('/stars/hash::blockHash')
+        .get(blockController.blockDetailsByBlockHash);
 };

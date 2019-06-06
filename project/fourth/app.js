@@ -8,11 +8,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //importing route
-let blockRoutes = require('./routes/blockRoute');
-let validationRoutes = require('./routes/validationRoute');
+let blockRoutes = require('./router/block');
+let validationRoutes = require('./router/validation');
 
 //register the route
 blockRoutes(app);
 validationRoutes(app);
 
-app.listen(8000, () => console.log('Private Blockchain Notary Service API is listening on port 8000!'));
+app.listen(8000, () => console.log('myBlockchain Service API is listening on port 8000'));

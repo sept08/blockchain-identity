@@ -78,3 +78,32 @@ exports.getBlock = function (blockHeight) {
         });
     });
 };
+
+exports.getBlocksByAddress = (walletAddress) => new Promise((resolve, reject) => {
+    let height = 0;
+    const data = [];
+    db.createReadStream()
+        .on('data', (block) => {
+            block = JSON.parse(block.value);
+            if(block.body.address === walletAddress) {
+                data.push(block);
+            }
+            height++;
+        })
+        .on('error', (error) => reject('Unable to read data stream!', error))
+        .on('close', () => resolve(data));
+});
+
+exports.getBlockByHash = (blockHash) => new Promise((resolve, reject) => {
+    let height = 0;
+    db.createReadStream()
+        .on('data', (block) => {
+            block = JSON.parse(block.value);
+            if(block.hash === blockHash) {
+                resolve(block);
+            }
+            height++;
+        })
+        .on('error', (error) => reject('Unable to read data stream!', error))
+        .on('close', () => reject('Not found'));
+});
