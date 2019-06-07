@@ -44,8 +44,7 @@ exports.createBlock = (req, res) => {
                                     block.height = height;
                                     block.hash = SHA256(JSON.stringify(block)).toString();
                                     blockchain.addDataToLevelDB(JSON.stringify(block)).then((data) => {
-                                        value.messageSignature = !value.messageSignature;
-                                        validation.addLevelDBData(address, JSON.stringify(value));
+                                        validation.invalidate(address);
                                         res.send(data);
                                     }).catch((error) => {
                                         res.send(error);
