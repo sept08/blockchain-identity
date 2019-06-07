@@ -23,14 +23,23 @@ exports.createBlock = (req, res) => {
                         let firstBlock = new Block("First block in the chain - Genesis block");
                         firstBlock.hash = SHA256(JSON.stringify(firstBlock)).toString();
                         blockchain.addDataToLevelDB(JSON.stringify(firstBlock)).then(() => {
-                            block.previousBlockHash = firstBlock.hash;
-                            block.height = height + 1;
-                            block.hash = SHA256(JSON.stringify(block)).toString();
-                            blockchain.addDataToLevelDB(JSON.stringify(block)).then((data) => {
-                                res.send(data);
+                            validation.getLevelDBData(address).then((value) => {
+                                if (value.messageSignature) {
+                                    block.previousBlockHash = firstBlock.hash;
+                                    block.height = height + 1;
+                                    block.hash = SHA256(JSON.stringify(block)).toString();
+                                    blockchain.addDataToLevelDB(JSON.stringify(block)).then((data) => {
+                                        validation.invalidate(address);
+                                        res.send(data);
+                                    }).catch((error) => {
+                                        res.send(error);
+                                    });
+                                } else {
+                                    res.send({"error": "Signature is not valid"});
+                                }
                             }).catch((error) => {
                                 res.send(error);
-                            });
+                            })
                         }).catch((error) => {
                             res.send(error);
                         });
@@ -38,7 +47,6 @@ exports.createBlock = (req, res) => {
                         blockchain.getBlock(height - 1).then((prevBlock) => {
                             // validate the address
                             validation.getLevelDBData(address).then((value) => {
-                                console.log('value', value)
                                 if (value.messageSignature) {
                                     block.previousBlockHash = prevBlock.hash;
                                     block.height = height;
