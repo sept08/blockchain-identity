@@ -137,18 +137,19 @@ Open `http://localhost:8000/stars/address:1Jtcy3Am9LR9JYZSJuN1DbmpJVsAnHRFNx` to
 ```
 [
     {
-        "hash": "33bd03235f29d8c7cd717921771950ff16e8ab89593199ba2282b968a791808f",
-        "height": 2,
+        "hash": "82256bfa401e69eda9f4442e27b9b013314d3517919a00318a04ea0d859b9e35",
+        "height": 1,
         "body": {
             "address": "1Jtcy3Am9LR9JYZSJuN1DbmpJVsAnHRFNx",
             "star": {
                 "dec": "-26° 29' 24.9",
                 "ra": "16h 29m 1.0s",
-                "story": "Found star using https://www.google.com/sky/"
+                "story": "Rm91bmQgc3RhciB1c2luZyBodHRwczovL3d3dy5nb29nbGUuY29tL3NreS8=",
+                "storyDecoded": "Found star using https://www.google.com/sky/"
             }
         },
-        "time": "1559842082",
-        "previousBlockHash": "e2b918c3bfdefa905d9f80de9be269089ab1a94a207fe103f71adcf2d2fb5975"
+        "time": "1559889291",
+        "previousBlockHash": "e57329a494be7625c5c60ea39ad3c99986bb36858de15f5344c099ec5ec32f52"
     }
 ]
 ```
@@ -160,24 +161,25 @@ Get star endpoint using URL path with block hash parameter.
 http://localhost:8000/stars/hash:[hash]
 
 ### Example
-Open `http://localhost:8000/stars/hash:33bd03235f29d8c7cd717921771950ff16e8ab89593199ba2282b968a791808f` to get the stars having `33bd03235f29d8c7cd717921771950ff16e8ab89593199ba2282b968a791808f` as hash.
+Open `http://localhost:8000/stars/hash:82256bfa401e69eda9f4442e27b9b013314d3517919a00318a04ea0d859b9e35` to get the stars having `82256bfa401e69eda9f4442e27b9b013314d3517919a00318a04ea0d859b9e35` as hash.
 
 ### Sample Output
 
 ```
 {
-    "hash": "33bd03235f29d8c7cd717921771950ff16e8ab89593199ba2282b968a791808f",
-    "height": 2,
+    "hash": "82256bfa401e69eda9f4442e27b9b013314d3517919a00318a04ea0d859b9e35",
+    "height": 1,
     "body": {
         "address": "1Jtcy3Am9LR9JYZSJuN1DbmpJVsAnHRFNx",
         "star": {
             "dec": "-26° 29' 24.9",
             "ra": "16h 29m 1.0s",
-            "story": "Found star using https://www.google.com/sky/"
+            "story": "Rm91bmQgc3RhciB1c2luZyBodHRwczovL3d3dy5nb29nbGUuY29tL3NreS8=",
+            "storyDecoded": "Found star using https://www.google.com/sky/"
         }
     },
-    "time": "1559842082",
-    "previousBlockHash": "e2b918c3bfdefa905d9f80de9be269089ab1a94a207fe103f71adcf2d2fb5975"
+    "time": "1559889291",
+    "previousBlockHash": "e57329a494be7625c5c60ea39ad3c99986bb36858de15f5344c099ec5ec32f52"
 }
 ```
 
@@ -188,23 +190,24 @@ Block endpoint using URL path with block height parameter.
 http://localhost:8000/block/{BLOCK_HEIGHT}
 
 ### Example
-Open `http://localhost:8000/block/2` to get the second block of the private blockchain.
+Open `http://localhost:8000/block/1` to get the second block of the private blockchain.
 
 ### Sample Output
 
 ```
 {
-    "hash": "33bd03235f29d8c7cd717921771950ff16e8ab89593199ba2282b968a791808f",
-    "height": 2,
+    "hash": "82256bfa401e69eda9f4442e27b9b013314d3517919a00318a04ea0d859b9e35",
+    "height": 1,
     "body": {
         "address": "1Jtcy3Am9LR9JYZSJuN1DbmpJVsAnHRFNx",
         "star": {
             "dec": "-26° 29' 24.9",
             "ra": "16h 29m 1.0s",
-            "story": "Found star using https://www.google.com/sky/"
+            "story": "Rm91bmQgc3RhciB1c2luZyBodHRwczovL3d3dy5nb29nbGUuY29tL3NreS8=",
+            "storyDecoded": "Found star using https://www.google.com/sky/"
         }
     },
-    "time": "1559842082",
-    "previousBlockHash": "e2b918c3bfdefa905d9f80de9be269089ab1a94a207fe103f71adcf2d2fb5975"
+    "time": "1559889291",
+    "previousBlockHash": "e57329a494be7625c5c60ea39ad3c99986bb36858de15f5344c099ec5ec32f52"
 }
 ```

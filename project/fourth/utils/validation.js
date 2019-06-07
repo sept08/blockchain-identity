@@ -23,3 +23,5 @@ exports.getLevelDBData = (key) => new Promise((resolve, reject) => {
         }
     });
 });
+
+exports.invalidate = (key) => db.del(key);

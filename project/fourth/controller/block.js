@@ -1,5 +1,6 @@
 const SHA256 = require('crypto-js/sha256');
 const blockchain = require('../utils/blockchain');
+const validation = require('../utils/validation');
 
 class Block {
     constructor(data) {
@@ -25,8 +26,8 @@ exports.createBlock = (req, res) => {
                             block.previousBlockHash = firstBlock.hash;
                             block.height = height + 1;
                             block.hash = SHA256(JSON.stringify(block)).toString();
-                            blockchain.addDataToLevelDB(JSON.stringify(block)).then(() => {
-                                res.send(block);
+                            blockchain.addDataToLevelDB(JSON.stringify(block)).then((data) => {
+                                res.send(data);
                             }).catch((error) => {
                                 res.send(error);
                             });
@@ -35,14 +36,26 @@ exports.createBlock = (req, res) => {
                         });
                     } else {
                         blockchain.getBlock(height - 1).then((prevBlock) => {
-                            block.previousBlockHash = prevBlock.hash;
-                            block.height = height;
-                            block.hash = SHA256(JSON.stringify(block)).toString();
-                            blockchain.addDataToLevelDB(JSON.stringify(block)).then(() => {
-                                res.send(block);
+                            // validate the address
+                            validation.getLevelDBData(address).then((value) => {
+                                console.log('value', value)
+                                if (value.messageSignature) {
+                                    block.previousBlockHash = prevBlock.hash;
+                                    block.height = height;
+                                    block.hash = SHA256(JSON.stringify(block)).toString();
+                                    blockchain.addDataToLevelDB(JSON.stringify(block)).then((data) => {
+                                        value.messageSignature = !value.messageSignature;
+                                        validation.addLevelDBData(address, JSON.stringify(value));
+                                        res.send(data);
+                                    }).catch((error) => {
+                                        res.send(error);
+                                    });
+                                } else {
+                                    res.send({"error": "Signature is not valid"});
+                                }
                             }).catch((error) => {
                                 res.send(error);
-                            });
+                            })
                         }).catch((error) => {
                             res.send(error);
                         });

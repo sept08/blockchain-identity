@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sept08/blockchain-identity#readme",
   "dependencies": {
+    "base-64": "^0.1.0",
     "bitcoinjs-lib": "^5.0.5",
     "bitcoinjs-message": "^2.0.0",
     "blockexplorer": "^1.0.1",

@@ -44,7 +44,6 @@ exports.requestValidation = (req, res) => {
     } else {
         res.send({"error": "Wallet address is required."});
     }
-
 }
 
 exports.verifySignature = (req, res) => {
@@ -65,7 +64,11 @@ exports.verifySignature = (req, res) => {
                     result.registerStar = isValid;
                     result.status = request;
                     result.status.messageSignature = isValid;
-                    res.send(result);
+                    validation.addLevelDBData(walletAddress, JSON.stringify(result.status)).then(() => {
+                        res.send(result);
+                    }).catch((error) => {
+                        res.send(error);
+                    })
                 } else {
                     res.send({"error": "Invalid message Signature"});
                 }

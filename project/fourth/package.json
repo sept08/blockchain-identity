@@ -9,6 +9,7 @@
   "author": "tian",
   "license": "MIT",
   "dependencies": {
+    "base-64": "^0.1.0",
     "bitcoinjs-lib": "^5.0.5",
     "bitcoinjs-message": "^2.0.0",
     "blockexplorer": "^1.0.1",

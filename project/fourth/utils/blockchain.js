@@ -1,11 +1,18 @@
 const level = require('level');
+const base64 = require('base-64');
 const chainDB = './chaindata';
 const db = level(chainDB);
 
 // Add data to levelDB with key/value pair
-addLevelDBData = function (key, data) {
+addLevelDBData = (key, data) => {
+    data = JSON.parse(data);
+    if(data.body.star) {
+        data.body.star.storyDecoded = data.body.star.story;
+        data.body.star.story = base64.encode(data.body.star.storyDecoded);
+    }
+    data = JSON.stringify(data);
     return new Promise(function (resolve, reject) {
-        db.put(key, data, function (error) {
+        db.put(key, data, (error) => {
             if (error) {
                 reject('Block ' + key + ' submission failed', error);
             } else {
@@ -40,8 +47,8 @@ exports.addDataToLevelDB = function (data) {
                 reject('Unable to read data stream!', error);
             })
             .on('close', function () {
-                addLevelDBData(height, data).then(() => {
-                    resolve(JSON.parse(data))
+                addLevelDBData(height, data).then((res) => {
+                    resolve(JSON.parse(res))
                 }).catch((error) => {
                     reject('Block ' + key + ' submission failed', error);
                 });
