@@ -1,4 +1,5 @@
 const SHA256 = require('crypto-js/sha256');
+const base64 = require('base-64');
 const blockchain = require('../utils/blockchain');
 const validation = require('../utils/validation');
 
@@ -84,6 +85,7 @@ exports.createBlock = (req, res) => {
 exports.blockDetails = function(req, res) {
     let blockId = req.params.blockId;
     blockchain.getBlock(blockId).then((block) => {
+        block.body.star.storyDecoded = base64.decode(block.body.star.story)
         res.send(block);
     }).catch((error) => {
         res.send(error);
@@ -92,7 +94,8 @@ exports.blockDetails = function(req, res) {
 
 exports.blockDetailsByAddress = (req, res) => {
     const walletAddress = req.params.walletAddress;
-    blockchain.getBlocksByAddress(walletAddress).then((data) => {
+    blockchain.getBlocksByAddress(walletAddress).then((data = []) => {
+        data.forEach(item => item.body.star.storyDecoded = base64.decode(item.body.star.story));
         res.send(data);
     }).catch((error) => {
         res.send({"error": error});
@@ -102,6 +105,7 @@ exports.blockDetailsByAddress = (req, res) => {
 exports.blockDetailsByBlockHash = (req, res) => {
     const blockHash = req.params.blockHash;
     blockchain.getBlockByHash(blockHash).then((data) => {
+        data.body.star.storyDecoded = base64.decode(data.body.star.story)
         res.send(data);
     }).catch((error) => {
         res.send({"error": error});

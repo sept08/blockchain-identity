@@ -7,8 +7,8 @@ const db = level(chainDB);
 addLevelDBData = (key, data) => {
     data = JSON.parse(data);
     if(data.body.star) {
-        data.body.star.storyDecoded = data.body.star.story;
-        data.body.star.story = base64.encode(data.body.star.storyDecoded);
+        // data.body.star.storyDecoded = data.body.star.story; // story message shouldn't be persist
+        data.body.star.story = base64.encode(data.body.star.story);
     }
     data = JSON.stringify(data);
     return new Promise(function (resolve, reject) {
