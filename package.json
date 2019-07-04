@@ -28,6 +28,8 @@
     "hapi": "^18.1.0",
     "hex2ascii": "0.0.3",
     "level": "^5.0.1",
+    "openzeppelin-solidity": "^2.3.0",
+    "truffle-hdwallet-provider": "^1.0.13",
     "web3": "^1.0.0-beta.55"
   }
 }

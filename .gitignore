@@ -8,5 +8,5 @@ chaindata/
 validation/
 # Editor directories and files
 .idea/
-
+.secret
 package-lock.json
