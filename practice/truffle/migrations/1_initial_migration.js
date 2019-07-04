@@ -1,5 +1,5 @@
-const Migrations = artifacts.require("Migrations");
+var SampleToken = artifacts.require("SampleToken");
 
 module.exports = function(deployer) {
-  deployer.deploy(Migrations);
+    deployer.deploy(SampleToken, "UdacityExampleToken", "UET", 18, 10);
 };
