@@ -30,8 +30,8 @@ In another terminal, run:
 
 ```
 cd app
-yarn install
-yarn run dev
+npm install
+npm run dev
 ```
 
 Then with your browser go to the address indicated by webpack.
