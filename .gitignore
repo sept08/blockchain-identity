@@ -9,4 +9,5 @@ validation/
 # Editor directories and files
 .idea/
 .secret
+build/
 package-lock.json
