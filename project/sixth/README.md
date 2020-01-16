@@ -45,7 +45,7 @@ npm install
 Launch Ganache:
 
 ```
-ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"
+ganache-cli
 ```
 
 Your terminal should look something like this:
@@ -84,11 +84,39 @@ All 10 tests should pass.
 
 ![truffle test](images/truffle_test.png)
 
-In a separate terminal window, launch the DApp:
+## Migrate Status
+Using network 'rinkeby'.
 
-```
-npm run dev
-```
+Running migration: 1_initial_migration.js
+  Deploying Migrations...
+  ... 0x34db79276c2b1a9252085693e0b6c843a620c9543f43bba85bc8ca0b916f43bc
+  Migrations: 0x39072e1ecdbe075fad32e6ab3030d36d4f45eadd
+Saving successful migration to network...
+  ... 0xfdb7314cc429d9e47d2ec1c4c109bb6b937035d3277cd37eb14399dd3f2d8500
+Saving artifacts...
+Running migration: 2_deploy_contracts.js
+  Deploying ManufacturerRole...
+  ... 0xd93a8c09011ff3773dc6619623b1fba6393c14b280e5b0bcad9acf2b75d2849d
+  ManufacturerRole: 0x415e955f7a8856941c8f271f9e06934c66d93606
+  Deploying RetailerRole...
+  ... 0x76563e8f6dff8966b34c5c2e088adf366e1c75fb4a098b77c36d4d59b5403e63
+  RetailerRole: 0x8b2327fcd8795e9189707d35fa6c68dbdba20306
+  Deploying CustomerRole...
+  ... 0x366b68d9a8f9553eab6d780670b3276ff27f307c30b25faa9b30d1805d9675c8
+  CustomerRole: 0xf0e07d52a3267a5d1d353eecf75f293a3beb31b8
+  Deploying SupplyChain...
+  ... 0x9555a5e57d5efe9d6bade4ec4624317d90c88492e45bd900eccadaf47a81a378
+  SupplyChain: 0xd059e925df806f327550f09086e6f9798f6f7b15
+Saving successful migration to network...
+  ... 0xe4db1c604b40bdecd3ffbaf2ad1001a6208f1dfb6880e152074d4ec902f053be
+Saving artifacts...
+
+
+## Wallet Address
+- https://rinkeby.etherscan.io/address/0x5d18bcd1231c1e53aa3a18c793fefab0b308d5a5
+
+## Contract Address
+- https://rinkeby.etherscan.io/tx/0x34db79276c2b1a9252085693e0b6c843a620c9543f43bba85bc8ca0b916f43bc
 
 ## Built With
 
