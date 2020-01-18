@@ -2459,14 +2459,41 @@
   },
   "networks": {
     "5777": {
-      "events": {},
+      "events": {
+        "0x71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "RetailerAdded",
+          "type": "event",
+          "signature": "0x71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa"
+        },
+        "0xdb7176e79cffef81cb01767dd0447a0b24bb72ca9778d4b245581086b2a7e6db": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "RetailerRemoved",
+          "type": "event",
+          "signature": "0xdb7176e79cffef81cb01767dd0447a0b24bb72ca9778d4b245581086b2a7e6db"
+        }
+      },
       "links": {},
       "address": "0x9420c085fb3b9d618c1549cECEfBBbb2Ae113bf1",
       "transactionHash": "0xfdbd1f993e6a09033ff3f69296840028a4e3510049e248b32f17dd0c5ea3175e"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2020-01-18T07:09:53.136Z",
+  "updatedAt": "2020-01-18T07:57:47.801Z",
   "devdoc": {
     "methods": {}
   },
