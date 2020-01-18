@@ -18,6 +18,10 @@ contract Ownable {
         return origOwner;
     }
 
+    function addressofsender() public view returns (address) {
+        return msg.sender;
+    }
+
     /// Define a function modifier 'onlyOwner'
     modifier onlyOwner() {
         require(isOwner());
@@ -29,7 +33,7 @@ contract Ownable {
         return msg.sender == origOwner;
     }
 
-    /// Define a function to renounce ownerhip
+    /// Define a function to renounce ownership
     function renounceOwnership() public onlyOwner {
         emit TransferOwnership(origOwner, address(0));
         origOwner = address(0);
