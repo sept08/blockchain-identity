@@ -26,7 +26,7 @@ __Ethereum Dapp for Tracking Items through Supply Chain__
 - Web3: Is a collection of libraries which allow you to interact with a local or remote ethereum node, using a HTTP or IPC connection.
 - Infura: Scalable API access to the Ethereum and IPFS networks. 
 - OpenZepplin: Contracts to help minimize risk by using battle-tested libraries of smart contracts for Ethereum and other blockchains.
-- @Triffle/hdwallet-provider: HD Wallet-enabled Web3 provider. Use it to sign transactions for addresses derived from a 12 or 24 word mnemonic.
+- truffle-hdwallet-provider: HD Wallet-enabled Web3 provider. Use it to sign transactions for addresses derived from a 12 or 24 word mnemonic.
 
 ## IPFS
 Not used in this project.
