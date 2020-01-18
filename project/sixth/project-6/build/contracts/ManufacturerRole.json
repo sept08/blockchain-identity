@@ -2458,42 +2458,15 @@
     "version": "0.4.24+commit.e67f0147.Emscripten.clang"
   },
   "networks": {
-    "5777": {
-      "events": {
-        "0x561138658ca49a8540dc70dcfe64c9026c1c5b9344642242dd6562970f9c1278": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "name": "account",
-              "type": "address"
-            }
-          ],
-          "name": "ManufacturerAdded",
-          "type": "event",
-          "signature": "0x561138658ca49a8540dc70dcfe64c9026c1c5b9344642242dd6562970f9c1278"
-        },
-        "0x2fed5abf6a80d6dfe30b4895481b2fc5d7dce5f8f7b931832f4a2947d5040c7f": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "name": "account",
-              "type": "address"
-            }
-          ],
-          "name": "ManufacturerRemoved",
-          "type": "event",
-          "signature": "0x2fed5abf6a80d6dfe30b4895481b2fc5d7dce5f8f7b931832f4a2947d5040c7f"
-        }
-      },
+    "4": {
+      "events": {},
       "links": {},
-      "address": "0x35DE53E17346116B9ed89Ff08739905e8d9BA091",
-      "transactionHash": "0x90010525458c6ad16ff3ef34b72f8ffe47b12a187e324afbb943961c76fd8410"
+      "address": "0xa47eADDD570C13295893B39E3FC8A966F16379fD",
+      "transactionHash": "0xc8a27c76b99fefa601ae77aebe7b94031d10fea4f0aedd163fda3b9581168231"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2020-01-18T07:57:47.798Z",
+  "updatedAt": "2020-01-18T08:57:24.940Z",
   "devdoc": {
     "methods": {}
   },
