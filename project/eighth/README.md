@@ -6,7 +6,7 @@ Contract address (SolnSquareVerifier) : 0xAE344E5a05bd7420281556aA312626c6E210F4
 
 Contract address (SquareVerifier): 0x455ce4843993df4a28226469a049F1125344304e
 
-OpenSea Marketplace Storefront:  [Storefront](https://rinkeby.opensea.io/storefront/real-estate-listing-4)
+OpenSea Marketplace Storefront:  [Storefront](https://rinkeby.opensea.io/assets/real-estate-listing-v5)
 
 ## Install
 
@@ -99,19 +99,6 @@ mv -t code/zokrates/code/square out output.code verfier.sol proving.key proof.js
 nano .secret
 `const mnemonic = fs.readFileSync(".secret").toString().trim();`
 ```
-
-## Minting a Token
-Run the dapp application on new terminal
-
-npm run dev
-
-`http://localhost:3000`
-
-![Dapp page](images/htmlPage.png)
-
-Confirm the trasaction with Metamask (will popup)
-
-![Dapp page](images/metamask_confirm.png)
 
 ## Storefront
 Create storefronte in OpenSea https://rinkeby.opensea.io/get-listed/step-two
